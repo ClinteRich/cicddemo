@@ -1,0 +1,24 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'AzureRmPipeline-conn'
+    subscriptionId: '3b0c8e3f-f2b1-4aad-a57b-58eae71306ea'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'FMG_CICD_DEMO_RG'
+    location: 'East US 2'
+    templateLocation: 'Linked artifact'
+    csmFile: 'CreateWebApp/azuredeploy.json'
+    overrideParameters: '-projectName cicddemo -linkedTemplateUri https://raw.githubusercontent.com/ClinteRich/cicddemo/master/CreateWebApp/linkedStorageAccount.json?token=AB5KUA4KMM7MRI7HIPMGVNS626Z5G'
+    deploymentMode: 'Incremental'
+    deploymentName: 'DeployPipelineTemplate'
