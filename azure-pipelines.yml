@@ -19,6 +19,6 @@ pool:
     location: 'East US 2'
     templateLocation: 'Linked artifact'
     csmFile: 'CreateWebApp/azuredeploy.json'
-    overrideParameters: '-projectName cicddemo -linkedTemplateUri https://raw.githubusercontent.com/ClinteRich/cicddemo/master/CreateWebApp/linkedStorageAccount.json?token=AB5KUA4KMM7MRI7HIPMGVNS626Z5G'
+    overrideParameters: '-projectName fmglobal -linkedTemplateUri https://raw.githubusercontent.com/ClinteRich/cicddemo/master/CreateWebApp/linkedStorageAccount.json?token=AB5KUA4KMM7MRI7HIPMGVNS626Z5G'
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
