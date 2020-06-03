@@ -20,6 +20,6 @@ steps:
     location: 'East US 2'
     templateLocation: 'Linked artifact'
     csmFile: 'CreateWebApp/azuredeploy.json'
-    overrideParameters: '-projectName fmglobal -linkedTemplateUri https://raw.githubusercontent.com/ClinteRich/cicddemo/master/CreateWebApp/linkedStorageAccount.json?token=AB5KUA7S6XX5SLZS2XWHENK6263TC'
+    overrideParameters: '-projectName fmglobal -linkedTemplateUri https://raw.githubusercontent.com/ClinteRich/cicddemo/master/CreateWebApp/linkedStorageAccount.json'
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
